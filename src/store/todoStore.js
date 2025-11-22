@@ -11,12 +11,12 @@ const  useStore = create((set)=> ({
     todos: [],
     addTodo: (title)=> {
         const newTodo = {
-            id: Date.now(),
+            id: Date.now(), //gives milliseconds since 01-01-1970 - this will work as the type is number which our zod schema validates.
             title: title,
             completed: false
         }
-        const validatedTodo = todoSchema.parse(newTodo);
-
+        const validatedTodo = todoSchema.parse(newTodo); //this part validates using the schema I made previously in Zod
+// only need schema for the adding item to to-do list part. Only C of the CRUD.
         set((state) => ({
             todos: [...state.todos,validatedTodo]
          // using spread operator here, it copies all the elements from todos[] array
