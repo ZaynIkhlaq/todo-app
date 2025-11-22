@@ -6,7 +6,7 @@ import { todoSchema } from '../schemas/todoSchema'
 
 import { create } from 'zustand'
 
-const  useStore = create((set)=> ({
+const useStore = create((set)=> ({
     // this is the state
     todos: [],
     addTodo: (title)=> {
@@ -46,3 +46,7 @@ const  useStore = create((set)=> ({
 
 
 }))
+
+
+
+export default useStore
